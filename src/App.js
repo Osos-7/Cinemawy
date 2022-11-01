@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import HeroSlide from './Components/Carousel/HeroSlide';
+import Header from './Components/Header/Header';
+import Footer from './Components/Footer/Footer';
+import Routing from './Routes/Routing';
+import {BrowserRouter, Route} from 'react-router-dom'
+// import 'swiper/swiper.min.css'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+      <BrowserRouter>
+      <Route render={props => (
+          <>
+              <Header {...props}/>
+              <Routing/>
+              <Footer/>
+          </>
+      )}/>
+  </BrowserRouter>
+    );
 }
 
 export default App;
+
+
+
+  // <div>
+    //   {/* <HeroSlide/> */}
+    //   <Routing/>
+    //   <Header/>
+    // </div>
